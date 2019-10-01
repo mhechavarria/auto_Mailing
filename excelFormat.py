@@ -1,6 +1,7 @@
 import openpyxl as excel
 import os
 from smtplib import SMTP
+from email.headerregistry import Address
 import ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -10,6 +11,7 @@ import time
 # Para el servidor de correo
 port = 25
 smtp_server="pmi.org.ar"
+
 
 #user = input("Enter user:")
 user = "rosario@pmi.org.ar"
@@ -431,7 +433,7 @@ try:
 
         message = MIMEMultipart("alternative")
         message["Subject"] = "PMI TOUR CONO SUR ROSARIO 2019"
-        message["From"] = user
+        message["From"] = "rosario@pmi.org.ar PMIBA - Comunidad Rosario"
         message["To"] = Asistentes[i].mail
 
         #print(message)
